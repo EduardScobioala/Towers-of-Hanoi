@@ -1,8 +1,8 @@
-# Turnurile din Hanoi:
+# Hanoi Towers:
 
-Se dau trei tije A, B, C si N discuri de diametre diferite, stivuite initial pe tija A
-in ordinea descrescatoare a diametrelor, formand un con. Sa se determine secventa de mutari
-ale discurilor de pe tija initiala A catre tija finala C, folosind B ca tija intermediara, 
-avand in vedere urmatoarele restrictii:
-    a. la fiecare miscare se va muta un singur disc
-    b. un disc se poate plasa doar asupra unui disc mai mare ca diametru
+There are three rods A, B, C and N discs of different diameters, initially stacked on rod A
+in descending order of diameters, forming a cone. Determine the sequence of moves
+of the disks from the initial rod A to the final rod C, using B as the intermediate rod,
+having regard to the following restrictions:
+     a. each move will change the position of only a single disc
+     b. a disc can only be placed on a disc larger in diameter
