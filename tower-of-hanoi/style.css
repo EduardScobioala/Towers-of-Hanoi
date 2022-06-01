@@ -1,0 +1,46 @@
+
+:root {
+    --color1: #30A9DE;
+    --color2: #E53A40;
+    --color3: #EFDC05;
+    --color4: #090707;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: var(--color4);
+    font-family: 'Press Start 2P', sans-serif;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header {
+    color: white;
+}
+
+h1 {
+    color: var(--color2);
+    font-size: 50px;
+}
+
+footer {
+    width: 100%;
+    margin: 20px;
+    text-align: right;
+}
+
+footer > a {
+    padding: 10px 20px 10px 20px;
+    color: var(--color4);
+    text-decoration: none;
+    background: white;
+    transition: all 100ms ease;
+    display: inline-block;
+}
+
+footer > a:hover {
+    background: var(--color2);
+}
