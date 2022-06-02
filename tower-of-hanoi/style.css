@@ -97,3 +97,31 @@ footer > a:hover {
     0%, 90%    {transform: translate(0, -1rem)}
     90%, 100%  {transform: translate(0, 0)}
 }
+
+.level-select {
+    color: white;
+    margin: auto -20rem  auto -20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 100ms ease;
+    font-size: 1.5rem;
+}
+
+.level-select-box {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.arrow:hover {
+    color: var(--color2);
+}
+  
+.level {
+    color: white;
+    font-size: 4rem;
+    padding: .5rem;
+}
