@@ -96,4 +96,20 @@ var game = {
             return false;
         }
     },
+
+    rumble: function() {
+        $('.active').addClass('rumble');
+        $columns.on('animationend', '.rumble', function() {
+            $(this).removeClass('rumble');
+        });
+    },
+
+    moveRing: function(destination) {
+        $('.active').prependTo(destination);
+    },
+
+    incrementCounter: function() {
+        this.moves++;
+        $moves.html('moves: ' + this.moves)
+    },
 }
