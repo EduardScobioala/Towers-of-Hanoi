@@ -112,4 +112,45 @@ var game = {
         this.moves++;
         $moves.html('moves: ' + this.moves)
     },
+
+    softReset: function() {
+        this.active = false;
+        $rings.removeClass('active hover');
+    },
+
+    checkWin: function() {
+        $winningColumns.each(function(column){
+            if ($(this).children().length == game.rings) {
+                game.gameOver();
+                return false;
+            }
+        })
+    },
+
+    gameOver: function() {
+        this.over = true;
+        var perfect = Math.pow(2, this.rings) - 1;
+        $('.c2').prepend("<div class='gameOver report'></div>")
+        $('.c2').prepend("<div class='gameOver big'>YOU WIN!</div>");
+        $('.report').html("<p>Your Score: " + this.moves + "</p><p>Perfect: " + perfect + "</p");
+    },
+
+    reset: function() {
+        $columns.children().remove();
+        
+        this.generateRings(this.rings);
+        this.over = false;
+        this.softReset();
+        this.moves = 0;
+        this.moverId = 0;
+        this.targetId = 0;
+        this.targetCol = {};
+        this.originCol = {};
+
+        $moves.html('MOVES: ' + this.moves);
+        $reset.html('RESET');
+        $('.level-select').remove();
+        $('.gameOver').remove();
+        $levelButton.show();
+    },
 }
