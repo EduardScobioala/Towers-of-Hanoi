@@ -44,3 +44,33 @@ footer > a {
 footer > a:hover {
     background: var(--color2);
 }
+
+.container {
+    display: flex;
+    width: 700px;
+    height: 50vh;
+    border: 17px solid var(--color1);
+    margin-top: 5px;
+}
+
+.moves {
+    text-align: right;
+    text-transform: uppercase;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    flex: auto;
+    margin: 0px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    cursor: pointer;
+    overflow-wrap: break-word;
+}
+
+.col+.col {
+    border-left: 10px dashed var(--color3);
+}
