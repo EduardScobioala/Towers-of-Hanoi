@@ -139,3 +139,35 @@ footer > a:hover {
 .report {
     margin-top: 0;
 }
+
+.big {
+    font-size: 4rem;
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    animation-duration: 1.5s;
+}
+  
+@keyframes blink {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+.hover {
+    transform: translate(0, -1rem);
+  }
+  
+.active {
+    background-color: white;
+    transform: translate(0, -1rem);
+}
+
+.rumble {
+    animation-duration: 250ms;
+    animation-name: rumble;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes rumble {
+    from {transform: rotate(10deg) translate(0, -1rem);}
+    to {transform: translate(0, -1rem);}
+}
