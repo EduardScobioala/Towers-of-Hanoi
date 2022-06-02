@@ -137,7 +137,7 @@ var game = {
 
     reset: function() {
         $columns.children().remove();
-        
+
         this.generateRings(this.rings);
         this.over = false;
         this.softReset();
@@ -153,4 +153,49 @@ var game = {
         $('.gameOver').remove();
         $levelButton.show();
     },
+
+    selectLevel: function(arrow) {
+        var $level = $('.level');
+        if (arrow.hasClass('left')) {
+            if (this.rings > 3) {
+                this.rings--;
+            }
+        } else if (this.rings < 15 ){
+            this.rings++;
+        }
+        $level.html(this.rings);
+        this.generateRings(this.rings);
+    },
+
+    displayLevelSelector: function() {
+        $reset.html('START');
+        $levelButton.hide();
+        this.over = true;
+
+        var $levelSelect = $("<div class='level-select'><p>How tall?</p><div class='level-select-box'><p class='arrow left'><</p><span class='level'>4</span><p class='arrow right'>></p></div></div>");
+
+        $columns.children().remove();
+        $c2.append($levelSelect);
+        $('.level').html(this.rings);
+        this.generateRings(this.rings);
+    },
+
+    generateRings: function(n) {
+        $c1.children().remove();
+
+        var multiplier =  1/n;
+        var width;
+        for (var i = 0; i < n; i++) {
+            width = (100 - i*multiplier*100) + '%';
+            $c1.prepend('<div class="ring"></div>');
+            $c1.children().eq(0).attr('id', i+1);
+            $c1.children().eq(0).css('width', width)
+        }
+        // reset this variable to account for all rings
+        $rings = $('.ring');
+        $rings.height($rings.height());
+    }
 }
+
+game.registerEvents();
+game.displayLevelSelector();
